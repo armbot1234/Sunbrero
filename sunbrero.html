@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- FONT STUFF -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<title>Page Title</title>
+</head>
+<style>
+    
+    #uvidx {
+        font-size: 20px;
+        color: blue;
+    }
+    h1 {
+        text-align: center;
+        font-size: 60px;
+    }
+    h2{
+        text-align: center;
+    }
+    body {
+        margin: 40px 15px;
+        font-family: 'Raleway', sans-serif;
+    }
+    div {
+        text-align: center;
+    }
+    img{
+        border-radius: 25px;
+    }
+    .section1{
+        background-color:rgb(255,249,222);
+    }
+    .section2{
+        background-color:rgb(255,211,176);
+    }
+    .section3{
+        
+        background-color:rgb(255,105,105);
+    }
+    .section4{
+        background-color:rgb(166, 208, 221);
+    }
+    .section5{
+        background-color:rgb(140, 215, 255);
+    }
+    .name {
+        display: flex;
+        justify-content: space-between;
+    }
+</style>
+<body>
+<div class = "section1">
+
+<h1><u>Welcome to <i>Sunbrero!</i></u></h1>
+
+<br/><br/>
+<img src="hat.JPG" alt="hat" style="float:left;width:358px;height:237px;">
+
+<div class = "box1">
+    <h3 style="margin-Left:380px">What is the <i>Sunbrero</i>?</h3>
+    <p style="margin-Left:380px"><i>Sunbrero</i> allows its user to harness the power of the sun to charge their devices on the go using renewable, clean energy. 
+        Our design allows for energy efficient power without losing the style or comfortability of the sombrero itself. </p>
+    
+    <h3 style="margin-Left:380px">Our Mission</h3>
+    <p style="margin-Left:380px">HackMHS’s theme of sustainability is what first sparked the idea for <i>Sunbrero</i>. 
+        As a renewable source of power, solar energy has an important role in reducing greenhouse gas emissions and mitigating climate change, which is critical to protecting humans, wildlife, and ecosystems. 
+        We wanted to bring solar energy to the everyday lives of average people. 
+    </p>
+</div>
+<br/>
+</div>
+<div class = "section2">
+<br/><br/>
+
+<img src="nikhil.png" alt="nik" style="float:left;width:178px;height:218px;">
+<img src="arm.png" alt="arm" style="float:right;width:220px;height:218px;">
+<div>
+    <p>How many minutes were you outside using the <i>Sunbrero</i>?</p>
+    <p>
+    <label>Time in minutes: </label>
+    <input id="inputTime" type="number" placeholder="Time" oninput="energyConverter(this.value)" onchange="energyConverter(this.value)">
+    </p>
+    <p>Maximum energy saved in watts: <span id="outputEnergy">0</span> W/h</p>
+    <p>Maximum mAh provided in time span: <span id="outputmAh">0</span> mAh</p>
+    <p>Watermelons exploded: <span id="outputWater">0</span> watermelons</p>
+</div>
+<br/>
+</div>
+<div class = "section3">
+<br/>
+<div>
+    <h3>Sunlight may be scarce depending on your location. <br/> How will you know when the most ideal time to wear the <i>Sunbrero</i> is?</h3>
+    <p>We will be using the UV Index. This is a measure of the level of UV radiation.</p>
+    <button  onclick="getUVIDX()" type="button" class="btn btn-info">GET UV INDEX OF YOUR LOCATION</button>
+    <br/>
+    <span id="uvidx"></span>
+    <br/><br/>
+    <p>You should wear the <i>Sunbrero</i> on days with a UV index between 3-7! </p>
+    <br/>
+
+    <p>Originally, we thought that we could ONLY utilize the UV index to see if the <i>Sunbrero</i> could be worn. </p>
+    <p>However, as an index, the UV Index doesn't directly specify a certain amount of solar energy. </p>
+    <p>By utilizing, <a href="https://forums.whirlpool.net.au/archive/1586112">this data</a>, and analyzing the data, we were able to create a 
+        relationship between solar energy and UV Index can be represented with this equation.</p>
+</div>
+<br/>
+</div>
+<div class = "section4">
+<br/>
+<img src="energyUV.png" alt="graph" style="float:left;width:320px;height:220px;">
+<h5 style="margin-Left:350px">Solar energy = 104*(UV Index) - 18.365</h5>
+<br/><br/>
+<p style="margin-Left:350px">This equation yields the solar energy in units of Watts per square meter, and the result is 
+    reasonable because it is close to the general statement that a UV Index of 1 represents solar energy of 100W/m^2.</p>
+<br/><br/><br/>
+<div>
+    <p>Based on the relationship from the data above, a UV Index of 1 indicates 85.6W/m^2. The solar pannels are 15in by 9in (or 0.0870966m^2), so multiplying
+        the solar energy by the area, the solar panel yields 7.455W at a UV index of 1. </p>
+    <p>With a higher UV index, the <i>Sunbrero</i> will be able to generate even more power!</p>
+    
+    <h5>The solar energy that can be produced with the current UV index of <span id="uvidx">?</span> is <span id = "abcdef">0</span>W</h5>
+</div>
+<br/>
+</div>
+
+<div class = "section5">
+<br/>
+<div class="names">
+    <h2>The Creators:</h2>
+    <h5>Armaan Bassi - created the website alongside designing <i>Sunbrero</i></h5>
+    <h5>Nikhil Prakash - building and designing <i>Sunbrero</i>, presentation manager</h5>
+</div>
+</div>
+
+
+<script>
+function energyConverter(valNum) {
+    if(valNum == ""){
+        console.log("BRUHH!!!");
+        document.getElementById("outputEnergy").innerHTML=(0);
+      document.getElementById("outputmAh").innerHTML=(0);
+    } else {
+        valNum = parseFloat(valNum);
+        document.getElementById("outputEnergy").innerHTML=((valNum*60)*5*0.5);
+        document.getElementById("outputmAh").innerHTML=((valNum/60)*0.5*1000);
+        document.getElementById("outputWater").innerHTML=(((valNum*60)*5*0.5)/1000);
+    }
+}
+
+var myHeaders = new Headers();
+myHeaders.append("x-access-token", "openuv-13goeyrlhvef7j5-io");
+myHeaders.append("Content-Type", "application/json");
+
+var requestOptions = {
+  method: 'GET',
+  headers: myHeaders,
+  redirect: 'follow'
+};
+function getUVIDX(){
+var UV_IDX = 1;
+fetch("https://api.openuv.io/api/v1/uv?lat=51.5&lng=-0.11&alt=100&dt=", requestOptions)
+    
+  .then(response => response.text())
+  .then((result) => {
+    console.log(result)
+    let res = JSON.parse(result)
+    UV_IDX = res['result']['uv'];
+    console.log(UV_IDX);
+    // document.getElementById("uvidx").innerText = UV_IDX;
+    let list = document.querySelectorAll("#uvidx");
+    for (let i =0;i<list.length;i++){
+        document.getElementById("abcdef").innerHTML = (((UV_IDX * 104)-18.365)*0.0870966);
+        list[i].textContent = UV_IDX;
+    }
+    return UV_IDX;
+    })
+  .catch(error => console.log('error', error));
+return UV_IDX;  
+}
+
+</script>  
+</body>
+</html>
